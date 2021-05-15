@@ -25,14 +25,14 @@
 #-injars      libs
 #-outjars     bin/classes-processed.jar
 
-# Using Google's License Verification Library 
+# Using Google's License Verification Library
 -keep class com.android.vending.licensing.ILicensingService
 
-# Specifies to write out some more information during processing. 
+# Specifies to write out some more information during processing.
 # If the program terminates with an exception, this option will print out the entire stack trace, instead of just the exception message.
 -verbose
 
-# Annotations are represented by attributes that have no direct effect on the execution of the code. 
+# Annotations are represented by attributes that have no direct effect on the execution of the code.
 -keepattributes *Annotation*
 
 -keepclassmembers enum * {
@@ -46,8 +46,8 @@
     <fields>;
 }
 
-# These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on 
--renamesourcefileattribute SourceFile    
+# These options let obfuscated applications or libraries produce stack traces that can still be deciphered later on
+-renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable
 
 # Enable proguard with Cordova
@@ -108,3 +108,13 @@
 # These clases contain references to cordova webView
 -keep class com.ionicframework.cordova.webview.** {*; }
 -keep class com.ionicframework.cordova.webview.*
+
+# VicSdk plugin
+-keep class com.VicSdkPlugin.VicSdk
+
+-keep class com.sun.jna.** { *; }
+-keep class ch.ti8m.vk.vicsdk.** { *; }
+-keep class paseto.service.VicToken { *; }
+-keep class paseto.service.InsurerClaimToken { *; }
+-keep class paseto.service.SelectiveDisclosureRequest { *; }
+-keep class paseto.service.SelectiveDisclosureResponse { *; }
