@@ -109,9 +109,12 @@
 -keep class com.ionicframework.cordova.webview.** {*; }
 -keep class com.ionicframework.cordova.webview.*
 
-# VicSdk plugin
--keep class com.VicSdkPlugin.VicSdk
+# cordova core plugin
+-keep class * extends com.cordova.core.actions.BaseAction {
+    <init>(org.json.JSONArray);
+}
 
+# vic sdk
 -keep class com.sun.jna.** { *; }
 -keep class ch.ti8m.vk.vicsdk.** { *; }
 -keep class paseto.service.VicToken { *; }
